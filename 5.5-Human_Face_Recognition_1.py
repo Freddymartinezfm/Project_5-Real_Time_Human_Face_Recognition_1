@@ -42,9 +42,10 @@ face_detect = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 # Check if human face cascade file is loaded
 if face_detect.empty():
 	raise IOError('Unable to haarcascade_frontalface_default.xml file')
+
 # Defining face_detector function
 def face_detector(image):
-	# Function detectsfaces and returns the cropped face
+	# Function detects faces and returns the cropped face
 	# If not face detected. it returns
 	# 
 	# 
@@ -60,5 +61,16 @@ def face_detector(image):
 # Destroy all windows 
 # cv2.destroyAllWindows()
 	pass
+
+
+# Initialzing video capturing object
+capture = cv2.VideoCapture(0)
+# One camera will be connected by passing 0 or -1
+# Second camera can be selected by passing 2
+
+# Initialize face_count to zero
+face_count = 0
+
+
 
 print('human face recognition')
